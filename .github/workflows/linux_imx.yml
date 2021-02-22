@@ -1,0 +1,47 @@
+name: linux_imx
+
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # 工作步骤
+    steps:
+      # 检查
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Space cleanup
+        run: |
+          sudo -E apt-get update
+
+      # 下载源码
+      - name: Clone source code
+        run: 
+          git clone https://source.codeaurora.org/external/imx/linux-imx -b  v5.4.98 linux-imx
+          
+      # 压缩源码
+      - name: uzip source code
+        run: |
+          zip -r linux_imx.zip linux-imx
+          mkdir file
+          cp linux_imx.zip ./file
+          cd file
+
+#      - name : Upload artifact
+#        uses: actions/upload-artifact@master
+#        with:
+#          name: OpenWrt
+#          path: file/
+          
+      - name : Upload cow
+        run: |
+          curl -sL https://git.io/cowtransfer | sh 
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.zip
