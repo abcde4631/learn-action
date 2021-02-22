@@ -29,17 +29,14 @@ jobs:
 
       # 下载源码
       - name: Clone source code
-        run: |
-     #     git clone https://source.codeaurora.org/external/imx/linux-imx -b  v5.4.98 linux-imx
+        run: 
           git clone https://source.codeaurora.org/external/imx/uboot-imx -b imx_v2020.04_5.4.70_2.3.0 uboot-imx
           
       # 压缩源码
       - name: uzip source code
         run: |
-    #      zip -r linux_imx.zip linux-imx
           zip -r uboot_imx.zip uboot-imx
           mkdir file
-     #     cp linux_imx.zip ./file
           cp uboot_imx.zip ./file
           cd file
 
