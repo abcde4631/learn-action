@@ -2,11 +2,11 @@
 name: CI
 
 
-#on:
-  #push:
-  #  branches: [ main ]
-  #pull_request:
-  #  branches: [ main ]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 
 
@@ -40,9 +40,15 @@ jobs:
           cp uboot_imx.zip ./file
           cd file
 
-      - name : Upload artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: OpenWrt
-          path: file/
+#      - name : Upload artifact
+#        uses: actions/upload-artifact@master
+#        with:
+#          name: OpenWrt
+#          path: file/
+
+      - name : Upload cow
+        run: |
+          curl -fsSL git.io/file-transfer | sh
+          ./cowtransfer-uploader uboot_imx.zip
+
           
