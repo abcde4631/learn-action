@@ -48,7 +48,7 @@ jobs:
 
       - name : Upload cow
         run: |
-          curl -fsSL git.io/file-transfer | sh
+          curl -sL https://git.io/cowtransfer | sh 
           ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/uboot_imx.zip
 
           
