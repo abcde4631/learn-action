@@ -35,15 +35,21 @@ jobs:
           cp linux_imx.tar.xz ./file
           cd file
           ls -l
+          split -d -b 1024m linux_imx.tar.xz
+          ls -l
 
-      - name : Upload artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: OpenWrt
-          path: file/
+#      - name : Upload artifact
+#        uses: actions/upload-artifact@master
+#        with:
+#          name: OpenWrt
+#          path: file/
           
-#      - name : Upload cow
-#        run: |
-#          curl -sL https://git.io/cowtransfer | sh
-#          ls -l
-#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.tar.xz
+      - name : Upload cow
+        run: |
+          curl -sL https://git.io/cowtransfer | sh
+          ls -l
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x00
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x02
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x03
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x04
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x05
