@@ -34,6 +34,7 @@ jobs:
           mkdir file
           cp linux_imx.tar.xz ./file
           cd file
+          ls -l
 
 #      - name : Upload artifact
 #        uses: actions/upload-artifact@master
@@ -43,5 +44,6 @@ jobs:
           
       - name : Upload cow
         run: |
-          curl -sL https://git.io/cowtransfer | sh 
+          curl -sL https://git.io/cowtransfer | sh
+          ls -l
           ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.tar.xz
