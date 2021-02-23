@@ -30,9 +30,9 @@ jobs:
       # 压缩源码
       - name: uzip source code
         run: |
-          zip -r linux_imx.zip linux-imx
+          tar -caf linux_imx.tar.xz  linux-imx/
           mkdir file
-          cp linux_imx.zip ./file
+          cp linux_imx.tar.xz ./file
           cd file
 
 #      - name : Upload artifact
@@ -44,4 +44,4 @@ jobs:
       - name : Upload cow
         run: |
           curl -sL https://git.io/cowtransfer | sh 
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.zip
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.tar.xz
