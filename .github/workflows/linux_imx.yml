@@ -36,14 +36,14 @@ jobs:
           cd file
           ls -l
 
-#      - name : Upload artifact
-#        uses: actions/upload-artifact@master
-#        with:
-#          name: OpenWrt
-#          path: file/
+      - name : Upload artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: OpenWrt
+          path: file/
           
-      - name : Upload cow
-        run: |
-          curl -sL https://git.io/cowtransfer | sh
-          ls -l
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.tar.xz
+#      - name : Upload cow
+#        run: |
+#          curl -sL https://git.io/cowtransfer | sh
+#          ls -l
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/linux_imx.tar.xz
