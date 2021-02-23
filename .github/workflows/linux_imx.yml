@@ -48,8 +48,9 @@ jobs:
         run: |
           curl -sL https://git.io/cowtransfer | sh
           ls -l
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x00
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x02
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x03
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x04
-          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x05
+          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x01
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x01
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x02
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x03
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x04
+#          ./cowtransfer-uploader /home/runner/work/learn-action/learn-action/file/x05
