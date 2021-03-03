@@ -30,7 +30,7 @@ jobs:
       # 下载源码
       - name: Clone source code
         run: 
-          git clone https://source.codeaurora.org/external/imx/uboot-imx -b imx_v2019.04_4.19.35_1.1.0 uboot_imx
+          git clone https://source.codeaurora.org/external/imx/uboot-imx -b imx_v2019.04_4.19.35_1.1.0 uboot-imx
           
       # 压缩源码
       - name: uzip source code
